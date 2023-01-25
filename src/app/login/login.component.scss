@@ -1,0 +1,23 @@
+.form-wrapper{
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  #login-form{
+    .error{
+      div{
+        color: red;
+      }
+    }
+    .ng-invalid,.ng-touched{
+      background-color: rgba(255, 0, 0, 0.192);
+    }
+    .ng-untouched{
+      background-color: transparent;
+    }
+    .ng-valid{
+      background-color: transparent;
+    }
+  }
+}

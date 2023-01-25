@@ -1,0 +1,22 @@
+<div class="container form-wrapper">
+  <h1>Access Form</h1>
+  <form [formGroup]="formulario" (ngSubmit)="submit($event)" id="login-form">
+    <div class="mb-3" class="username-container">
+      <label for="user" class="form-label">UserName:</label>
+      <div class="error" *ngIf="username.invalid && (username.dirty || username.touched)">
+        <div id="userNote" class="form-text" *ngIf="username.value==''">The username is required</div>
+      </div>
+      <input type="text" placeholder="UserName:" class="form-control" id="user" aria-describedby="userNote" formControlName="username">
+      <div id="userNote" class="form-text">You can enter using the "estudiante" User Name</div>
+    </div>
+    <div class="mb-3" class="pass-container">
+      <label for="pass" class="form-label">Password:</label>
+      <div class="error" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div id="userNote" class="form-text" *ngIf="password.value==''">The username is required</div>
+      </div>
+      <input type="password" placeholder="Password:" class="form-control" id="pass" aria-describedby="userNote" formControlName="password">
+      <div id="userNote" class="form-text">You can enter using the "cadif1" password.</div>
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-outline-primary" [disabled]="formulario.invalid">
+  </form>
+</div>
